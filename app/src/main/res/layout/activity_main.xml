@@ -5,95 +5,150 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="15dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="188dp"
-        android:layout_marginBottom="508dp"
-        android:text=" Varža Ohm"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="366dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="100dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
-
-        <EditText
-            android:id="@+id/editTextText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Žiedų skaičius:"
-            android:textSize="15sp" />
-
-        <RadioButton
-            android:id="@+id/band4radioButton"
-            android:layout_width="85dp"
-            android:layout_height="wrap_content"
-            android:text="4 žiedai" />
-
-        <RadioButton
-            android:id="@+id/band5radioButton2"
-            android:layout_width="85dp"
-            android:layout_height="wrap_content"
-            android:text="5 žiedai" />
-
-        <RadioButton
-            android:id="@+id/band6radioButton3"
-            android:layout_width="85dp"
-            android:layout_height="wrap_content"
-            android:text="6 žiedai" />
-
-    </RadioGroup>
-
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/resistorBaseImg"
         android:layout_width="311dp"
         android:layout_height="103dp"
-        android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_alignParentTop="true"
         app:srcCompat="@drawable/resistor_base" />
 
-
-
-    
-    <Button
-        android:id="@+id/button5"
+    <TextView
+        android:id="@+id/powerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="155dp"
-        android:layout_marginBottom="35dp"
-        android:text="Skaičiuoti"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.0" />
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="20dp"
+        android:text=" Varža: Ohm"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/resistorBaseImg"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/bandNrLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/powerText"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/bandNrText"
+            android:layout_width="115dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:ems="10"
+            android:gravity="center"
+            android:text="Žiedų skaičius:"
+            android:textSize="16sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/band4RadioBtn"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:text="4 žiedai" />
+
+            <RadioButton
+                android:id="@+id/band5RadioBtn"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:text="5 žiedai" />
+
+            <RadioButton
+                android:id="@+id/band6RadioBtn"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:text="6 žiedai" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/selectBtnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bandNrLayout"
+        android:gravity="center_horizontal"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/labelASelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:minHeight="50dp"/>
+
+        <Spinner
+            android:id="@+id/labelBSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:minHeight="50dp"/>
+
+        <Spinner
+            android:id="@+id/labelCSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:minHeight="50dp"/>
+
+        <Spinner
+            android:id="@+id/labelDSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:minHeight="50dp"/>
+
+        <Spinner
+            android:id="@+id/labelESelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:minHeight="50dp"/>
+
+        <Spinner
+            android:id="@+id/labelPpmSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:minHeight="50dp"/>
+
+        <Button
+            android:id="@+id/calculateBtn"
+            android:layout_width="150dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="35dp"
+            android:text="Skaičiuoti"
+            android:textSize="22sp"
+            android:visibility="visible" />
+    </LinearLayout>
 
 </RelativeLayout>
