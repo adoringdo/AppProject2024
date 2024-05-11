@@ -8,24 +8,21 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity implements CustomSpinner.OnSpinnerEventsListener{
 
-//Spinners
-    private CustomSpinner spinner_colors_A;
-    private CustomSpinner spinner_colors_B;
-    private CustomSpinner spinner_colors_C;
-    private CustomSpinner spinner_colors_D;
-    private CustomSpinner spinner_colors_E;
-    private CustomSpinner spinner_colors_PPM;
-
-//Adapters
+    //Adapters
     private ColorAdapter adapterABC;
     private ColorAdapter adapterD;
     private ColorAdapter adapterE;
     private ColorAdapter adapterPPM;
+
+
 
 
     @Override
@@ -40,8 +37,57 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
         });
 
 
+    //Radio button functionality
+        final RadioGroup radio =  findViewById(R.id.radioGroup);
+        radio.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+        //Layout names to change visibility
+            final LinearLayout linearLayoutA = findViewById(R.id.selectALayout);
+            final LinearLayout linearLayoutB = findViewById(R.id.selectBLayout);
+            final LinearLayout linearLayoutC = findViewById(R.id.selectCLayout);
+            final LinearLayout linearLayoutD = findViewById(R.id.selectDLayout);
+            final LinearLayout linearLayoutE = findViewById(R.id.selectELayout);
+            final LinearLayout linearLayoutPPM = findViewById(R.id.selectPPMLayout);
+
+        //Change layout visibility depending on selected radio button
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                View radioButton = radio.findViewById(checkedId);
+                int index = radio.indexOfChild(radioButton);
+
+
+                if (index == 0) {
+                        linearLayoutA.setVisibility(View.VISIBLE);
+                        linearLayoutB.setVisibility(View.VISIBLE);
+                        linearLayoutC.setVisibility(View.GONE);
+                        linearLayoutD.setVisibility(View.VISIBLE);
+                        linearLayoutE.setVisibility(View.VISIBLE);
+                        linearLayoutPPM.setVisibility(View.GONE);
+                }
+                else if (index == 1) {
+                        linearLayoutA.setVisibility(View.VISIBLE);
+                        linearLayoutB.setVisibility(View.VISIBLE);
+                        linearLayoutC.setVisibility(View.VISIBLE);
+                        linearLayoutD.setVisibility(View.VISIBLE);
+                        linearLayoutE.setVisibility(View.VISIBLE);
+                        linearLayoutPPM.setVisibility(View.GONE);
+                }
+                else if (index == 2) {
+                        linearLayoutA.setVisibility(View.VISIBLE);
+                        linearLayoutB.setVisibility(View.VISIBLE);
+                        linearLayoutC.setVisibility(View.VISIBLE);
+                        linearLayoutD.setVisibility(View.VISIBLE);
+                        linearLayoutE.setVisibility(View.VISIBLE);
+                        linearLayoutPPM.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+
     //Select A color
-        spinner_colors_A = findViewById(R.id.spinner_colors_A);
+
+        CustomSpinner spinner_colors_A = findViewById(R.id.spinner_colors_A);
 
         spinner_colors_A.setSpinnerEventsListener(this);
 
@@ -50,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
 
 
     //Select B color
-        spinner_colors_B = findViewById(R.id.spinner_colors_B);
+        CustomSpinner spinner_colors_B = findViewById(R.id.spinner_colors_B);
 
         spinner_colors_B.setSpinnerEventsListener(this);
 
@@ -59,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
 
 
     //Select C color
-        spinner_colors_C = findViewById(R.id.spinner_colors_C);
+        CustomSpinner spinner_colors_C = findViewById(R.id.spinner_colors_C);
 
         spinner_colors_C.setSpinnerEventsListener(this);
 
@@ -67,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
 
 
     //Select D color
-        spinner_colors_D = findViewById(R.id.spinner_colors_D);
+        CustomSpinner spinner_colors_D = findViewById(R.id.spinner_colors_D);
 
         spinner_colors_D.setSpinnerEventsListener(this);
 
@@ -76,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
 
 
     //Select E color
-        spinner_colors_E = findViewById(R.id.spinner_colors_E);
+        CustomSpinner spinner_colors_E = findViewById(R.id.spinner_colors_E);
 
         spinner_colors_E.setSpinnerEventsListener(this);
 
@@ -85,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
 
 
     //Select PPM color
-        spinner_colors_PPM = findViewById(R.id.spinner_colors_PPM);
+        CustomSpinner spinner_colors_PPM = findViewById(R.id.spinner_colors_PPM);
 
         spinner_colors_PPM.setSpinnerEventsListener(this);
 

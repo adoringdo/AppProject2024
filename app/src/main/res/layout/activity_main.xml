@@ -158,7 +158,8 @@
             android:gravity="center_vertical"
             android:paddingEnd="5dp"
             android:paddingStart="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/bandCText"
@@ -245,7 +246,8 @@
             android:gravity="center_vertical"
             android:paddingEnd="5dp"
             android:paddingStart="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/bandPPMText"
