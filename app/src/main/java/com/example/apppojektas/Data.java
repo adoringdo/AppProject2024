@@ -22,6 +22,7 @@ public class Data {
         Brown.setColorName("Ruda");
         Brown.setColorImg(R.drawable.brown_img);
         colorList.add(Brown);
+        //skaicius
 
         Colors Red = new Colors();
         Red.setColorName("Raudona");
