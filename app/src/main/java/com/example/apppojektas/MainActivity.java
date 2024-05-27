@@ -104,10 +104,8 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
         calculateButton = findViewById(R.id.calculateBtn);
         radio = findViewById(R.id.radioGroup);
-
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,7 +130,6 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
 
         // Radio button functionality
         radio.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-
             // Layout names to change visibility
             final LinearLayout linearLayoutA = findViewById(R.id.selectALayout);
             final LinearLayout linearLayoutB = findViewById(R.id.selectBLayout);
@@ -182,8 +179,8 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
         spinner_colors_A.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Colors colors = new Colors();
                 Log.d("MainActivity", "on item clicked: " + adapterABC.getItem(position));
-                Toast.makeText(MainActivity.this, "You clicked on:" + adapterABC.getItem(position), Toast.LENGTH_LONG).show();
                 setLabelA(adapterABC.getItem(position));
             }
 
@@ -201,7 +198,6 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Log.d("MainActivity", "on item clicked: " + adapterABC.getItem(position));
-                Toast.makeText(MainActivity.this, "You clicked on:" + adapterABC.getItem(position), Toast.LENGTH_LONG).show();
                 setLabelB(adapterABC.getItem(position));
             }
 
@@ -219,7 +215,6 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Log.d("MainActivity", "on item clicked: " + adapterABC.getItem(position));
-                Toast.makeText(MainActivity.this, "You clicked on:" + adapterABC.getItem(position), Toast.LENGTH_LONG).show();
                 setLabelC(adapterABC.getItem(position));
             }
 
@@ -238,7 +233,6 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Log.d("MainActivity", "on item clicked: " + adapterD.getItem(position));
-                Toast.makeText(MainActivity.this, "You clicked on:" + adapterD.getItem(position), Toast.LENGTH_LONG).show();
                 setLabelD(adapterD.getItem(position));
             }
 
@@ -257,7 +251,6 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Log.d("MainActivity", "on item clicked: " + adapterE.getItem(position));
-                Toast.makeText(MainActivity.this, "You clicked on:" + adapterE.getItem(position), Toast.LENGTH_LONG).show();
                 setLabelE(adapterE.getItem(position));
             }
 
@@ -276,7 +269,6 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Log.d("MainActivity", "on item clicked: " + adapterPPM.getItem(position));
-                Toast.makeText(MainActivity.this, "You clicked on:" + adapterPPM.getItem(position), Toast.LENGTH_LONG).show();
                 setLabelPPM(adapterPPM.getItem(position));
             }
 

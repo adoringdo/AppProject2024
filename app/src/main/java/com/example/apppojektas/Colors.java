@@ -16,7 +16,4 @@ public class Colors implements Serializable {
     public int getColorImg() {return colorImg;}
 
     public void setColorImg(int image) {this.colorImg = image;}
-
-
-
 }
