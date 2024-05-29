@@ -23,7 +23,7 @@ public class RingPPMColorValues {
         labelValuesPPM.add(GREEN_PPM);
         labelValuesPPM.add(BLUE_PPM);
         labelValuesPPM.add(VIOLET_PPM);
-        labelValuesPPM.add(GREEN_PPM);
+        labelValuesPPM.add(GREY_PPM);
     }
 
     public String getValueByPosition(int position) {
