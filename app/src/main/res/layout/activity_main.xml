@@ -34,7 +34,7 @@
                 app:srcCompat="@drawable/resistor_base" />
 
             <View
-                android:id="@+id/bandA"
+                android:id="@+id/ringA"
                 android:layout_width="15dp"
                 android:layout_height="76dp"
                 android:layout_alignParentTop="true"
@@ -48,7 +48,7 @@
                 app:layout_constraintVertical_bias="1.0" />
 
             <View
-                android:id="@+id/bandB"
+                android:id="@+id/ringB"
                 android:layout_width="15dp"
                 android:layout_height="53dp"
                 android:layout_alignParentTop="true"
@@ -62,12 +62,12 @@
                 app:layout_constraintVertical_bias="0.48" />
 
             <View
-                android:id="@+id/bandC"
+                android:id="@+id/ringC"
                 android:layout_width="15dp"
                 android:layout_height="53dp"
                 android:layout_alignParentTop="true"
                 android:background="#000000"
-                android:visibility="visible"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/resistorBaseImg"
                 app:layout_constraintHorizontal_bias="0.425"
@@ -76,7 +76,7 @@
                 app:layout_constraintVertical_bias="0.48" />
 
             <View
-                android:id="@+id/bandD"
+                android:id="@+id/ringD"
                 android:layout_width="15dp"
                 android:layout_height="53dp"
                 android:layout_alignParentTop="true"
@@ -90,7 +90,7 @@
                 app:layout_constraintVertical_bias="0.48" />
 
             <View
-                android:id="@+id/bandE"
+                android:id="@+id/ringE"
                 android:layout_width="15dp"
                 android:layout_height="53dp"
                 android:layout_alignParentTop="true"
@@ -104,12 +104,12 @@
                 app:layout_constraintVertical_bias="0.48" />
 
             <View
-                android:id="@+id/bandF"
+                android:id="@+id/ringPPM"
                 android:layout_width="15dp"
                 android:layout_height="76dp"
                 android:layout_alignParentTop="true"
                 android:background="#000000"
-                android:visibility="visible"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/resistorBaseImg"
                 app:layout_constraintHorizontal_bias="0.765"
