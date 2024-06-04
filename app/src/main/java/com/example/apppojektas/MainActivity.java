@@ -1,6 +1,8 @@
 package com.example.apppojektas;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,7 +20,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements CustomSpinner.OnSpinnerEventsListener {
 
@@ -44,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
 
     ChangeRingColor setAllRingColors = new ChangeRingColor();
 
-
+    private PowerSetManager powerSetManager;
 
     public void setRadioIndex(int index) {
         this.radioIndex = index;
@@ -104,9 +110,16 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        powerSetManager = new PowerSetManager(this);
+
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        Button historyButton = findViewById(R.id.historyBtn);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -114,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
         });
         calculateButton = findViewById(R.id.calculateBtn);
         radio = findViewById(R.id.radioGroup);
+
 
         View ringA = findViewById(R.id.ringA);
         View ringB = findViewById(R.id.ringB);
@@ -141,8 +155,50 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
                     powerText = findViewById(R.id.powerText);
                     powerText.setText(result);
                 }
+
+                // Add the code to add a power set
+                String power = powerText.getText().toString();
+                String name = generateUniqueName();
+                String date = getCurrentDateTime();
+                List<String> colors = new ArrayList<>();
+
+                if (findViewById(R.id.ringA).getVisibility() == View.VISIBLE) {
+                    colors.add("#" + Integer.toHexString(((ColorDrawable) ringA.getBackground()).getColor()).substring(2));
+                }
+                if (findViewById(R.id.ringB).getVisibility() == View.VISIBLE) {
+                    colors.add("#" + Integer.toHexString(((ColorDrawable) ringB.getBackground()).getColor()).substring(2));
+                }
+                if (findViewById(R.id.ringC).getVisibility() == View.VISIBLE) {
+                    colors.add("#" + Integer.toHexString(((ColorDrawable) ringC.getBackground()).getColor()).substring(2));
+                }
+                if (findViewById(R.id.ringD).getVisibility() == View.VISIBLE) {
+                    colors.add("#" + Integer.toHexString(((ColorDrawable) ringD.getBackground()).getColor()).substring(2));
+                }
+                if (findViewById(R.id.ringE).getVisibility() == View.VISIBLE) {
+                    colors.add("#" + Integer.toHexString(((ColorDrawable) ringE.getBackground()).getColor()).substring(2));
+                }
+                if (findViewById(R.id.ringPPM).getVisibility() == View.VISIBLE) {
+                    colors.add("#" + Integer.toHexString(((ColorDrawable) ringPPM.getBackground()).getColor()).substring(2));
+                }
+
+
+                PowerSet powerSet = new PowerSet(name, power, date, colors);
+                powerSetManager.savePowerSet(powerSet);
+                Toast.makeText(MainActivity.this, "Power set added successfully!", Toast.LENGTH_SHORT).show();
+
+
             }
         });
+
+
+    historyButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            startActivity(new Intent(MainActivity.this, HistoryActivity.class));
+
+        }
+    });
+
 
 
         // Radio button functionality
@@ -321,7 +377,14 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
     }
 
 
+    private String getCurrentDateTime() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+        return sdf.format(new Date());
+    }
 
+    private String generateUniqueName() {
+        return "PowerSet_" + System.currentTimeMillis(); // Using current timestamp as a unique identifier
+    }
 
 
     @Override
