@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Data {
 
-//Band A, B and C array
+    //Band A, B and C array
     public static List<Colors> getColorListABC() {
 
         List<Colors> colorList = new ArrayList<>();
@@ -68,10 +68,20 @@ public class Data {
 
     }
 
-//Band D array
-    public static List<Colors> getColorListD() {
+    //Band D array
+    public static List<Colors> getColorMultiplier() {
 
         List<Colors> colorList = new ArrayList<>();
+
+        Colors Silver = new Colors();
+        Silver.setColorName("Sidabrinė");
+        Silver.setColorImg(R.drawable.silver_img);
+        colorList.add(Silver);
+
+        Colors Gold = new Colors();
+        Gold.setColorName("Auksinė");
+        Gold.setColorImg(R.drawable.gold_img);
+        colorList.add(Gold);
 
         Colors Black = new Colors();
         Black.setColorName("Juoda");
@@ -123,25 +133,14 @@ public class Data {
         White.setColorImg(R.drawable.white_img);
         colorList.add(White);
 
-        Colors Gold = new Colors();
-        Gold.setColorName("Auksinė");
-        Gold.setColorImg(R.drawable.gold_img);
-        colorList.add(Gold);
-
-        Colors Silver = new Colors();
-        Silver.setColorName("Sidabrinė");
-        Silver.setColorImg(R.drawable.silver_img);
-        colorList.add(Silver);
-
         return colorList;
 
     }
 
-//Band E array
-    public static List<Colors> getColorListE() {
+    //Band E array
+    public static List<Colors> getColorTolerance() {
 
         List<Colors> colorList = new ArrayList<>();
-
 
         Colors Brown = new Colors();
         Brown.setColorName("Ruda");
@@ -197,7 +196,7 @@ public class Data {
 
     }
 
-//Band PPM array
+    //Band PPM array
     public static List<Colors> getColorListPPM() {
 
         List<Colors> colorList = new ArrayList<>();

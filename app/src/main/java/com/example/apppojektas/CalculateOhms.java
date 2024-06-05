@@ -1,6 +1,6 @@
 package com.example.apppojektas;
 
-import android.icu.text.DecimalFormat;
+import java.text.DecimalFormat;
 
 public class CalculateOhms {
 
@@ -41,21 +41,31 @@ public class CalculateOhms {
     }
 
     public String calculateFourRings() {
-        double result = ((labelABC.getValueByPosition(labelAposition) * 10) + (labelABC.getValueByPosition(labelBposition)) * labelD.getValueByPosition(multiplierPosition));
+        double result = ((labelABC.getValueOfABCPosition(labelAposition) * 10) +
+                (labelABC.getValueOfABCPosition(labelBposition))) *
+                labelD.getValueOfMultiplierByPosition(multiplierPosition);
         String prettifiedResult = prettifyCalculationsResult(result);
-        return prettifiedResult + " " + labelE.getValueByPosition(tolerancePosition);
+        return prettifiedResult + " " + labelE.getValueOfToleranceByPosition(tolerancePosition);
     }
 
     public String calculateFiveRings() {
-        double result = (((labelABC.getValueByPosition(labelAposition) * 100) + labelABC.getValueByPosition(labelBposition) * 10) + labelABC.getValueByPosition(labelCposition)) * labelD.getValueByPosition(multiplierPosition);
+        double result = (((labelABC.getValueOfABCPosition(labelAposition) * 100) +
+                labelABC.getValueOfABCPosition(labelBposition) * 10) +
+                labelABC.getValueOfABCPosition(labelCposition)) *
+                labelD.getValueOfMultiplierByPosition(multiplierPosition);
         String prettifiedResult = prettifyCalculationsResult(result);
-        return prettifiedResult + " " + labelE.getValueByPosition(tolerancePosition);
+        return prettifiedResult + " " + labelE.getValueOfToleranceByPosition(tolerancePosition);
     }
 
     public String calculateSixRings() {
-        double result = (((labelABC.getValueByPosition(labelAposition) * 100) + labelABC.getValueByPosition(labelBposition) * 10) + labelABC.getValueByPosition(labelCposition)) * labelD.getValueByPosition(multiplierPosition);
+
+        double result = (((labelABC.getValueOfABCPosition(labelAposition) * 100) +
+                labelABC.getValueOfABCPosition(labelBposition) * 10) +
+                labelABC.getValueOfABCPosition(labelCposition)) *
+                labelD.getValueOfMultiplierByPosition(multiplierPosition);
         String prettifiedResult = prettifyCalculationsResult(result);
-        return prettifiedResult + " " + labelE.getValueByPosition(tolerancePosition) + " " + labelF.getValueByPosition(ppmPosition);
+        return prettifiedResult + " " + labelE.getValueOfToleranceByPosition(tolerancePosition) +
+                " " + labelF.getValueOfPPMByPosition(ppmPosition);
     }
     private String prettifyCalculationsResult(double power) {
         int precision = 2;

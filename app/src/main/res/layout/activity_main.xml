@@ -1,396 +1,329 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp"
+    android:orientation="vertical"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/image_bulb"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"/>
 
-    <ImageButton
-        android:id="@+id/historyBtn"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="13dp"
-        android:padding="3dp"
-        android:src="@drawable/history"
-        android:background="@android:color/transparent"
-        android:elevation="4dp"
-        android:scaleType="fitCenter"
-        />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/resistorLayout"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="35dp"
-            android:layout_marginTop="25dp">
+            android:text="Varža:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_L"
+            android:gravity="center"
+            android:fontFamily="@font/inter_semibold"/>
 
-            <ImageView
-                android:id="@+id/resistorBaseImg"
-                android:layout_width="450dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/resistor_base" />
+        <TextView
+            android:id="@+id/powerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ohm "
+            android:textColor="@color/green"
+            android:textSize="@dimen/text_L"
+            android:gravity="center"
+            android:textStyle="italic"
+            android:fontFamily="@font/inter_semibold"
+            android:layout_marginStart="@dimen/small_margin"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/bg_gradient_line"/>
+
+    <FrameLayout
+        android:id="@+id/resistorBaseImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/large_margin">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:src="@drawable/image_resistor"
+            android:contentDescription="@string/app_name"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="top|center_horizontal">
 
             <TextView
-                android:id="@+id/textA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="A"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/ringA"
-                app:layout_constraintEnd_toEndOf="@+id/ringA"
-                app:layout_constraintStart_toStartOf="@+id/ringA"
-                app:layout_constraintTop_toTopOf="parent"
-                android:gravity="center"/>
-
-            <View
-                android:id="@+id/ringA"
-                android:layout_width="15dp"
-                android:layout_height="78dp"
-                android:layout_alignParentTop="true"
-                android:background="#000000"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/resistorBaseImg"
-                app:layout_constraintHorizontal_bias="0.229"
-                app:layout_constraintStart_toStartOf="@+id/resistorBaseImg"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                android:textSize="@dimen/text_S"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter_medium"
+                android:layout_marginHorizontal="@dimen/resistor_band_distance"/>
 
             <TextView
-                android:id="@+id/textB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="B"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/ringB"
-                app:layout_constraintEnd_toEndOf="@+id/ringB"
-                app:layout_constraintStart_toStartOf="@+id/ringB"
-                app:layout_constraintTop_toTopOf="parent"
-                android:gravity="center"/>
-
-            <View
-                android:id="@+id/ringB"
-                android:layout_width="15dp"
-                android:layout_height="56dp"
-                android:layout_alignParentTop="true"
-                android:background="#000000"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/resistorBaseImg"
-                app:layout_constraintHorizontal_bias="0.331"
-                app:layout_constraintStart_toStartOf="@+id/resistorBaseImg"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.78" />
+                android:textSize="@dimen/text_S"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter_medium"
+                android:layout_marginHorizontal="@dimen/resistor_band_distance"/>
 
             <TextView
+                android:visibility="gone"
                 android:id="@+id/textC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="C"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/ringC"
-                app:layout_constraintEnd_toEndOf="@+id/ringC"
-                app:layout_constraintStart_toStartOf="@+id/ringC"
-                app:layout_constraintTop_toTopOf="parent"
-                android:gravity="center"
-                android:visibility="invisible"/>
-
-            <View
-                android:id="@+id/ringC"
-                android:layout_width="15dp"
-                android:layout_height="56dp"
-                android:layout_alignParentTop="true"
-                android:background="#000000"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/resistorBaseImg"
-                app:layout_constraintHorizontal_bias="0.425"
-                app:layout_constraintStart_toStartOf="@+id/resistorBaseImg"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.77" />
+                android:textSize="@dimen/text_S"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter_medium"
+                android:layout_marginHorizontal="@dimen/resistor_band_distance"/>
 
             <TextView
-                android:id="@+id/textD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="D"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/ringD"
-                app:layout_constraintEnd_toEndOf="@+id/ringD"
-                app:layout_constraintStart_toStartOf="@+id/ringD"
-                app:layout_constraintTop_toTopOf="parent"
-                android:gravity="center"/>
-
-            <View
-                android:id="@+id/ringD"
-                android:layout_width="15dp"
-                android:layout_height="55dp"
-                android:layout_alignParentTop="true"
-                android:background="#000000"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/resistorBaseImg"
-                app:layout_constraintHorizontal_bias="0.501"
-                app:layout_constraintStart_toStartOf="@+id/resistorBaseImg"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.78" />
+                android:textSize="@dimen/text_S"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter_medium"
+                android:layout_marginHorizontal="@dimen/resistor_band_distance"/>
 
             <TextView
-                android:id="@+id/textE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="E"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/ringE"
-                app:layout_constraintEnd_toEndOf="@+id/ringE"
-                app:layout_constraintStart_toStartOf="@+id/ringE"
-                app:layout_constraintTop_toTopOf="parent"
-                android:gravity="center"/>
-
-            <View
-                android:id="@+id/ringE"
-                android:layout_width="15dp"
-                android:layout_height="56dp"
-                android:layout_alignParentTop="true"
-                android:background="#000000"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/resistorBaseImg"
-                app:layout_constraintHorizontal_bias="0.652"
-                app:layout_constraintStart_toStartOf="@+id/resistorBaseImg"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.79" />
+                android:textSize="@dimen/text_S"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter_medium"
+                android:layout_marginHorizontal="@dimen/resistor_band_distance"/>
 
             <TextView
+                android:visibility="gone"
                 android:id="@+id/textF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="F"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/ringPPM"
-                app:layout_constraintEnd_toEndOf="@+id/ringPPM"
-                app:layout_constraintStart_toStartOf="@+id/ringPPM"
-                app:layout_constraintTop_toTopOf="parent"
-                android:gravity="center"
-                android:visibility="invisible"/>
+                android:textSize="@dimen/text_S"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter_medium"
+                android:layout_marginHorizontal="@dimen/resistor_band_distance"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
 
             <View
+                android:id="@+id/ringA"
+                android:layout_width="@dimen/resistor_band_width"
+                android:layout_height="@dimen/resistor_band_height"
+                android:background="@color/resistor_red"
+                android:layout_marginHorizontal="@dimen/resistor_band_distance"/>
+
+            <View
+                android:id="@+id/ringB"
+                android:layout_width="@dimen/resistor_band_width"
+                android:layout_height="@dimen/resistor_band_height"
+                android:background="@color/resistor_orange"
+                android:layout_marginHorizontal="@dimen/resistor_band_distance"/>
+
+            <View
+                android:visibility="gone"
+                android:id="@+id/ringC"
+                android:layout_width="@dimen/resistor_band_width"
+                android:layout_height="@dimen/resistor_band_height"
+                android:background="@color/resistor_yellow"
+                android:layout_marginHorizontal="@dimen/resistor_band_distance"/>
+
+            <View
+                android:id="@+id/ringD"
+                android:layout_width="@dimen/resistor_band_width"
+                android:layout_height="@dimen/resistor_band_height"
+                android:background="@color/resistor_brown"
+                android:layout_marginHorizontal="@dimen/resistor_band_distance"/>
+
+            <View
+                android:id="@+id/ringE"
+                android:layout_width="@dimen/resistor_band_width"
+                android:layout_height="@dimen/resistor_band_height"
+                android:background="@color/resistor_green"
+                android:layout_marginHorizontal="@dimen/resistor_band_distance"/>
+
+            <View
+                android:visibility="gone"
                 android:id="@+id/ringPPM"
-                android:layout_width="15dp"
-                android:layout_height="78dp"
-                android:layout_alignParentTop="true"
-                android:background="#000000"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/resistorBaseImg"
-                app:layout_constraintHorizontal_bias="0.765"
-                app:layout_constraintStart_toStartOf="@+id/resistorBaseImg"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                android:layout_width="@dimen/resistor_band_width"
+                android:layout_height="@dimen/resistor_band_height"
+                android:background="@color/resistor_blue"
+                android:layout_marginHorizontal="@dimen/resistor_band_distance"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
+        </LinearLayout>
+    </FrameLayout>
 
     <TextView
-        android:id="@+id/powerText"
+        android:id="@+id/bandNrText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="20dp"
-        android:text=" Varža: Ohm"
-        android:textSize="25sp"
+        android:text="Žiedų skaičius:"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_XM"
         android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/resistorLayout"
-        />
+        android:fontFamily="@font/inter_semibold"
+        android:layout_marginStart="@dimen/large_margin"/>
 
-
-    <LinearLayout
-        android:id="@+id/bandNrLayout"
+    <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/powerText"
-        android:layout_marginTop="0dp"
-        android:orientation="horizontal">
+        android:layout_marginHorizontal="@dimen/large_margin"
+        android:layout_marginVertical="@dimen/normal_margin"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="3">
 
-
-        <TextView
-            android:id="@+id/bandNrText"
-            android:layout_width="115dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0"
-            android:ems="10"
-            android:gravity="center"
-            android:text="Žiedų skaičius:"
-            android:textSize="16sp"
-            android:visibility="gone"/>
-
-        <RadioGroup
-            android:id="@+id/radioGroup"
+        <RadioButton
+            android:id="@+id/band4RadioBtn"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:paddingStart="10dp"
-            android:orientation="horizontal"
-            android:background="@drawable/custom_radio_group_background">
+            android:layout_height="@dimen/radio_button_height"
+            android:layout_weight="1"
+            android:background="@drawable/btn_radio"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:gravity="center"
+            android:text="Four"
+            android:textColor="@color/radio_text_selector"
+            android:textSize="@dimen/text_M"
+            android:fontFamily="@font/inter_medium"
+            android:layout_marginEnd="@dimen/normal_margin"/>
 
-            <RadioButton
-                android:id="@+id/band4RadioBtn"
-                android:checked="true"
-                android:layout_width="85dp"
-                android:layout_height="match_parent"
-                android:text="4 žiedai"
-                android:layout_marginStart="10dp"
-                android:buttonTint="#44d48d" />
+        <RadioButton
+            android:id="@+id/band5RadioBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/radio_button_height"
+            android:layout_weight="1"
+            android:background="@drawable/btn_radio"
+            android:button="@android:color/transparent"
+            android:checked="false"
+            android:gravity="center"
+            android:text="Five"
+            android:textColor="@color/radio_text_selector"
+            android:textSize="@dimen/text_M"
+            android:fontFamily="@font/inter_medium"
+            android:layout_marginEnd="@dimen/normal_margin"/>
 
-            <RadioButton
-                android:id="@+id/band5RadioBtn"
-                android:layout_width="85dp"
-                android:layout_height="match_parent"
-                android:text="5 žiedai"
-                android:layout_marginStart="10dp"/>
+        <RadioButton
+            android:id="@+id/band6RadioBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/radio_button_height"
+            android:layout_weight="1"
+            android:background="@drawable/btn_radio"
+            android:button="@android:color/transparent"
+            android:checked="false"
+            android:gravity="center"
+            android:text="Six"
+            android:textColor="@color/radio_text_selector"
+            android:textSize="@dimen/text_M"
+            android:fontFamily="@font/inter_medium"/>
 
-            <RadioButton
-                android:id="@+id/band6RadioBtn"
-                android:layout_width="85dp"
-                android:layout_height="match_parent"
-                android:text="6 žiedai"
-                android:layout_marginStart="10dp"/>
-
-        </RadioGroup>
-
-    </LinearLayout>
+    </RadioGroup>
 
     <LinearLayout
         android:id="@+id/spinnersLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/bandNrLayout"
         android:gravity="center_horizontal"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
         android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/selectALayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:paddingEnd="5dp"
-        android:paddingStart="5dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/bandAText"
-            android:layout_width="95dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:ems="10"
-            android:gravity="center"
-            android:text="Žiedas A:"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <com.example.apppojektas.CustomSpinner
-            android:id="@+id/spinner_colors_A"
+        <LinearLayout
+            android:id="@+id/selectALayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="40dp"
-            android:padding="5dp"
-            android:dropDownVerticalOffset="40dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/spinner_background"
-            />
-    </LinearLayout>
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="@dimen/large_margin">
 
+            <TextView
+                android:id="@+id/bandAText"
+                style="@style/SpinnerTextStyle"
+                android:text="Žiedas A:"/>
 
-    <LinearLayout
-        android:id="@+id/selectBLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:paddingEnd="5dp"
-        android:paddingStart="5dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/bandBText"
-            android:layout_width="95dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:ems="10"
-            android:gravity="center"
-            android:text="Žiedas B:"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            />
-
-        <com.example.apppojektas.CustomSpinner
-            android:id="@+id/spinner_colors_B"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="40dp"
-            android:padding="5dp"
-            android:dropDownVerticalOffset="40dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/spinner_background"
-            />
-    </LinearLayout>
+            <com.example.apppojektas.CustomSpinner
+                android:id="@+id/spinner_colors_A"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:dropDownVerticalOffset="40dp" />
+        </LinearLayout>
 
 
         <LinearLayout
+            android:id="@+id/selectBLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="@dimen/large_margin"
+            android:layout_marginTop="@dimen/half_margin">
+
+            <TextView
+                android:id="@+id/bandBText"
+                style="@style/SpinnerTextStyle"
+                android:text="Žiedas B:" />
+
+            <com.example.apppojektas.CustomSpinner
+                android:id="@+id/spinner_colors_B"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:dropDownVerticalOffset="40dp"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:visibility="gone"
             android:id="@+id/selectCLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:paddingEnd="5dp"
-            android:paddingStart="5dp"
             android:orientation="horizontal"
-            android:visibility="gone">
+            android:layout_marginHorizontal="@dimen/large_margin"
+            android:layout_marginTop="@dimen/half_margin">
 
             <TextView
                 android:id="@+id/bandCText"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:ems="10"
-                android:gravity="center"
-                android:text="Žiedas C:"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
+                style="@style/SpinnerTextStyle"
+                android:text="Žiedas C:"/>
 
-        <com.example.apppojektas.CustomSpinner
-            android:id="@+id/spinner_colors_C"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="40dp"
-            android:padding="5dp"
-            android:dropDownVerticalOffset="40dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/spinner_background"
-            />
-    </LinearLayout>
+            <com.example.apppojektas.CustomSpinner
+                android:id="@+id/spinner_colors_C"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:dropDownVerticalOffset="40dp"
+                />
+        </LinearLayout>
 
 
         <LinearLayout
@@ -398,32 +331,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:paddingEnd="5dp"
-            android:paddingStart="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="@dimen/large_margin"
+            android:layout_marginTop="@dimen/half_margin">
 
             <TextView
                 android:id="@+id/bandDText"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:ems="10"
-                android:gravity="center"
-                android:text="Žiedas D:"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
+                style="@style/SpinnerTextStyle"
+                android:text="Žiedas D:"/>
 
-        <com.example.apppojektas.CustomSpinner
-            android:id="@+id/spinner_colors_D"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="40dp"
-            android:padding="5dp"
-            android:dropDownVerticalOffset="40dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/spinner_background"
-            />
-</LinearLayout>
+            <com.example.apppojektas.CustomSpinner
+                android:id="@+id/spinner_colors_D"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:dropDownVerticalOffset="40dp"
+                />
+        </LinearLayout>
 
 
         <LinearLayout
@@ -431,86 +354,89 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:paddingEnd="5dp"
-            android:paddingStart="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="@dimen/large_margin"
+            android:layout_marginTop="@dimen/half_margin">
 
             <TextView
                 android:id="@+id/bandEText"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:ems="10"
-                android:gravity="center"
-                android:text="Žiedas E:"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
+                style="@style/SpinnerTextStyle"
+                android:text="Žiedas E:"/>
 
-        <com.example.apppojektas.CustomSpinner
-            android:id="@+id/spinner_colors_E"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="40dp"
-            android:padding="5dp"
-            android:dropDownVerticalOffset="40dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/spinner_background"
-            />
-    </LinearLayout>
+            <com.example.apppojektas.CustomSpinner
+                android:id="@+id/spinner_colors_E"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:dropDownVerticalOffset="40dp"
+                />
+        </LinearLayout>
 
 
         <LinearLayout
+            android:visibility="gone"
             android:id="@+id/selectPPMLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:paddingEnd="5dp"
-            android:paddingStart="5dp"
             android:orientation="horizontal"
-            android:visibility="gone">
+            android:layout_marginHorizontal="@dimen/large_margin"
+            android:layout_marginTop="@dimen/half_margin">
 
             <TextView
                 android:id="@+id/bandPPMText"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:ems="10"
-                android:gravity="center"
-                android:text="Žiedas PPM:"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
+                style="@style/SpinnerTextStyle"
+                android:text="Žiedas PPM:"/>
 
-        <com.example.apppojektas.CustomSpinner
-            android:id="@+id/spinner_colors_PPM"
+            <com.example.apppojektas.CustomSpinner
+                android:id="@+id/spinner_colors_PPM"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:dropDownVerticalOffset="40dp"
+                />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="40dp"
-            android:padding="5dp"
-            android:dropDownVerticalOffset="40dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/spinner_background"
-            />
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/large_margin"
+            android:layout_marginHorizontal="@dimen/large_margin">
+
+            <Button
+                android:id="@+id/historyBtn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button_red"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Istorija"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_XM"
+                android:visibility="visible"
+                android:layout_marginEnd="@dimen/half_margin"/>
+
+            <Button
+                android:id="@+id/calculateBtn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button_green"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Skaičiuoti"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_XM"
+                android:visibility="visible"
+                android:layout_marginStart="@dimen/half_margin"/>
+
+        </LinearLayout>
     </LinearLayout>
 
-
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/calculateBtn"
-            android:layout_width="150dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginBottom="0dp"
-            android:text="Skaičiuoti"
-            android:textSize="22sp"
-            android:visibility="visible"
-            android:textColor="@android:color/white"
-            android:backgroundTint="#44d48d"
-            app:cornerRadius="16dp"
-            android:elevation="8dp"
-            app:rippleColor="@android:color/darker_gray"
-        />
-
-
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

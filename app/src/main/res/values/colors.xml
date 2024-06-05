@@ -2,4 +2,17 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="green">#028291</color>
+    <color name="peach">#DB9B7C</color>
+    <color name="dark_green">#025059</color>
+    <color name="grey">#efefef</color>
+
+    <color name="resistor_red">#C3282E</color>
+    <color name="resistor_orange">#F75526</color>
+    <color name="resistor_yellow">#F5B953</color>
+    <color name="resistor_brown">#66244A</color>
+    <color name="resistor_green">#2D8078</color>
+    <color name="resistor_blue">#5666B6</color>
+
+    <color name="background">#FFF0E9</color>
 </resources>

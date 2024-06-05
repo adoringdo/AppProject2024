@@ -1,25 +1,19 @@
 package com.example.apppojektas;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -114,18 +108,17 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
 
         powerSetManager = new PowerSetManager(this);
 
-
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+//        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        ImageButton historyButton = findViewById(R.id.historyBtn);
+        Button historyButton = findViewById(R.id.historyBtn);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+       /* ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-        });
+        });*/
         calculateButton = findViewById(R.id.calculateBtn);
         radio = findViewById(R.id.radioGroup);
 
@@ -226,10 +219,10 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
                     linearLayoutD.setVisibility(View.VISIBLE);
                     linearLayoutE.setVisibility(View.VISIBLE);
                     linearLayoutPPM.setVisibility(View.GONE);
-                    ringC.setVisibility(View.INVISIBLE);
-                    ringPPM.setVisibility(View.INVISIBLE);
-                    textC.setVisibility(View.INVISIBLE);
-                    textF.setVisibility(View.INVISIBLE);
+                    ringC.setVisibility(View.GONE);
+                    ringPPM.setVisibility(View.GONE);
+                    textC.setVisibility(View.GONE);
+                    textF.setVisibility(View.GONE);
                     setRadioIndex(index);
                 } else if (index == 1) {
                     linearLayoutA.setVisibility(View.VISIBLE);
@@ -239,9 +232,9 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
                     linearLayoutE.setVisibility(View.VISIBLE);
                     linearLayoutPPM.setVisibility(View.GONE);
                     ringC.setVisibility(View.VISIBLE);
-                    ringPPM.setVisibility(View.INVISIBLE);
+                    ringPPM.setVisibility(View.GONE);
                     textC.setVisibility(View.VISIBLE);
-                    textF.setVisibility(View.INVISIBLE);
+                    textF.setVisibility(View.GONE);
                     setRadioIndex(index);
                 } else if (index == 2) {
                     linearLayoutA.setVisibility(View.VISIBLE);
@@ -325,14 +318,14 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
         // Select D color
         CustomSpinner spinner_colors_D = findViewById(R.id.spinner_colors_D);
         spinner_colors_D.setSpinnerEventsListener(this);
-        adapterD = new ColorAdapter(MainActivity.this, Data.getColorListD());
+        adapterD = new ColorAdapter(MainActivity.this, Data.getColorMultiplier());
         spinner_colors_D.setAdapter(adapterD);
         spinner_colors_D.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Log.d("MainActivity", "on item clicked: " + adapterD.getItem(position));
                 setLabelD(adapterD.getItem(position));
-                setAllRingColors.ChangeRingDColor(getLabelD(), ringD);
+                setAllRingColors.ChangeRingMultiplierColor(getLabelD(), ringD);
             }
 
             @Override
@@ -344,14 +337,14 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
         // Select E color
         CustomSpinner spinner_colors_E = findViewById(R.id.spinner_colors_E);
         spinner_colors_E.setSpinnerEventsListener(this);
-        adapterE = new ColorAdapter(MainActivity.this, Data.getColorListE());
+        adapterE = new ColorAdapter(MainActivity.this, Data.getColorTolerance());
         spinner_colors_E.setAdapter(adapterE);
         spinner_colors_E.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Log.d("MainActivity", "on item clicked: " + adapterE.getItem(position));
                 setLabelE(adapterE.getItem(position));
-                setAllRingColors.ChangeRingEColor(getLabelE(), ringE);
+                setAllRingColors.ChangeRingToleranceColor(getLabelE(), ringE);
             }
 
             @Override

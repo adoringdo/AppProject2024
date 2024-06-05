@@ -4,4 +4,25 @@
     <dimen name="color_box_size">15dp</dimen>
     <dimen name="color_box_width">20dp</dimen>
     <dimen name="color_box_height">24dp</dimen>
+
+    <dimen name="normal_margin">16dp</dimen>
+    <dimen name="half_margin">8dp</dimen>
+    <dimen name="medium_margin">12dp</dimen>
+    <dimen name="small_margin">5dp</dimen>
+    <dimen name="large_margin">22dp</dimen>
+
+    <dimen name="text_S">12sp</dimen>
+    <dimen name="text_M">14sp</dimen>
+    <dimen name="text_XM">16sp</dimen>
+    <dimen name="text_L">21sp</dimen>
+
+    <dimen name="button_height">55dp</dimen>
+    <dimen name="button_radius">15dp</dimen>
+
+    <dimen name="resistor_band_height">66dp</dimen>
+    <dimen name="resistor_band_width">8dp</dimen>
+    <dimen name="resistor_band_distance">5dp</dimen>
+
+    <dimen name="radio_button_height">45dp</dimen>
+    <dimen name="radio_button_radius">10dp</dimen>
 </resources>

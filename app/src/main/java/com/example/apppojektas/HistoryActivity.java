@@ -9,6 +9,7 @@ import android.graphics.drawable.shapes.RectShape;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -30,7 +31,7 @@ public class HistoryActivity extends AppCompatActivity {
         powerSetManager = new PowerSetManager(this);
         powerSetContainer = findViewById(R.id.historyContainer);
 
-        Button backButton = findViewById(R.id.backButton);
+        ImageView backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(v -> finish());
 
         displayPowerSets();

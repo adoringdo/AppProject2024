@@ -12,21 +12,23 @@ public class RingPPMColorValues {
     public static final String BLUE_PPM = "10 ppm";
     public static final String VIOLET_PPM = "5 ppm";
     public static final String GREY_PPM = "1 ppm";
-    private ArrayList<String> labelValuesPPM = new ArrayList<>();
 
-    RingPPMColorValues() {
-        labelValuesPPM.add(BLACK_PPM);
-        labelValuesPPM.add(BROWN_PPM);
-        labelValuesPPM.add(RED_PPM);
-        labelValuesPPM.add(ORANGE_PPM);
-        labelValuesPPM.add(YELLOW_PPM);
-        labelValuesPPM.add(GREEN_PPM);
-        labelValuesPPM.add(BLUE_PPM);
-        labelValuesPPM.add(VIOLET_PPM);
-        labelValuesPPM.add(GREY_PPM);
+    private ArrayList<String> labelValuesPpm;
+
+    public RingPPMColorValues() {
+        labelValuesPpm = new ArrayList<>(9); // Initialize ArrayList with fixed size
+        labelValuesPpm.add(BLACK_PPM);
+        labelValuesPpm.add(BROWN_PPM);
+        labelValuesPpm.add(RED_PPM);
+        labelValuesPpm.add(ORANGE_PPM);
+        labelValuesPpm.add(YELLOW_PPM);
+        labelValuesPpm.add(GREEN_PPM);
+        labelValuesPpm.add(BLUE_PPM);
+        labelValuesPpm.add(VIOLET_PPM);
+        labelValuesPpm.add(GREY_PPM);
     }
 
-    public String getValueByPosition(int position) {
-        return labelValuesPPM.get(position);
+    public String getValueOfPPMByPosition(int position) {
+        return labelValuesPpm.get(position);
     }
 }

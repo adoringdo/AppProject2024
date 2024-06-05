@@ -29,36 +29,37 @@ public class ChangeRingColor {
         }
     }
 
-    public void ChangeRingDColor(int label, View viewD) {
+    public void ChangeRingMultiplierColor(int label, View viewD) {
         switch (label) {
-            case 0:  viewD.setBackgroundColor(Color.parseColor("#000000"));
+
+            case 0: viewD.setBackgroundColor(Color.parseColor("#bdbec0"));
                 break;
-            case 1: viewD.setBackgroundColor(Color.parseColor("#764c29"));
+            case 1: viewD.setBackgroundColor(Color.parseColor("#8f7726"));
                 break;
-            case 2:  viewD.setBackgroundColor(Color.parseColor("#bf1e2e"));
+            case 2:  viewD.setBackgroundColor(Color.parseColor("#000000"));
                 break;
-            case 3:  viewD.setBackgroundColor(Color.parseColor("#f1592a"));
+            case 3: viewD.setBackgroundColor(Color.parseColor("#764c29"));
                 break;
-            case 4:  viewD.setBackgroundColor(Color.parseColor("#ffde16"));
+            case 4:  viewD.setBackgroundColor(Color.parseColor("#bf1e2e"));
                 break;
-            case 5:  viewD.setBackgroundColor(Color.parseColor("#0b9444"));
+            case 5:  viewD.setBackgroundColor(Color.parseColor("#f1592a"));
                 break;
-            case 6:  viewD.setBackgroundColor(Color.parseColor("#0f75bc"));
+            case 6:  viewD.setBackgroundColor(Color.parseColor("#ffde16"));
                 break;
-            case 7:  viewD.setBackgroundColor(Color.parseColor("#7f3f98"));
+            case 7:  viewD.setBackgroundColor(Color.parseColor("#0b9444"));
                 break;
-            case 8:  viewD.setBackgroundColor(Color.parseColor("#6d6e71"));
+            case 8:  viewD.setBackgroundColor(Color.parseColor("#0f75bc"));
                 break;
-            case 9: viewD.setBackgroundColor(Color.parseColor("#ffffff"));
+            case 9:  viewD.setBackgroundColor(Color.parseColor("#7f3f98"));
                 break;
-            case 10: viewD.setBackgroundColor(Color.parseColor("#8f7726"));
+            case 10:  viewD.setBackgroundColor(Color.parseColor("#6d6e71"));
                 break;
-            case 11: viewD.setBackgroundColor(Color.parseColor("#bdbec0"));
+            case 11: viewD.setBackgroundColor(Color.parseColor("#ffffff"));
                 break;
         }
     }
 
-    public void ChangeRingEColor(int label, View viewE) {
+    public void ChangeRingToleranceColor(int label, View viewE) {
         switch (label) {
 
             case 0: viewE.setBackgroundColor(Color.parseColor("#764c29"));

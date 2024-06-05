@@ -1,9 +1,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.AppPojektas" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.AppPojektas" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
     <style name="Theme.AppPojektas" parent="Base.Theme.AppPojektas" />
+
+    <style name="SpinnerTextStyle">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_M</item>
+        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="android:gravity">start</item>
+    </style>
+
 </resources>
