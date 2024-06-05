@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/border_bg">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -6,23 +11,28 @@
     android:padding="8dp">
 
     <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textStyle="bold"/>
+
+    <TextView
         android:id="@+id/nameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/powerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Power" />
+        android:text="Power"
+        android:textSize="25sp"/>
 
-    <TextView
-        android:id="@+id/dateTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Date" />
+
 
     <LinearLayout
         android:id="@+id/colorsContainer"
@@ -35,6 +45,12 @@
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delete"
-        android:layout_marginTop="8dp"/>
+        android:text="Ištrinti"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="end"
+        android:textSize="17sp"
+        android:visibility="visible"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#44d48d" />
 </LinearLayout>
+</FrameLayout>

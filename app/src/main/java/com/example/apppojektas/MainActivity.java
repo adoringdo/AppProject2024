@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -118,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        Button historyButton = findViewById(R.id.historyBtn);
+        ImageButton historyButton = findViewById(R.id.historyBtn);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -135,6 +136,8 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
         View ringD = findViewById(R.id.ringD);
         View ringE = findViewById(R.id.ringE);
         View ringPPM = findViewById(R.id.ringPPM);
+        TextView textC = findViewById(R.id.textC);
+        TextView textF = findViewById(R.id.textF);
 
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
                 // Add the code to add a power set
                 String power = powerText.getText().toString();
                 String name = generateUniqueName();
-                String date = getCurrentDateTime();
+                String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date());
                 List<String> colors = new ArrayList<>();
 
                 if (findViewById(R.id.ringA).getVisibility() == View.VISIBLE) {
@@ -225,6 +228,8 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
                     linearLayoutPPM.setVisibility(View.GONE);
                     ringC.setVisibility(View.INVISIBLE);
                     ringPPM.setVisibility(View.INVISIBLE);
+                    textC.setVisibility(View.INVISIBLE);
+                    textF.setVisibility(View.INVISIBLE);
                     setRadioIndex(index);
                 } else if (index == 1) {
                     linearLayoutA.setVisibility(View.VISIBLE);
@@ -235,6 +240,8 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
                     linearLayoutPPM.setVisibility(View.GONE);
                     ringC.setVisibility(View.VISIBLE);
                     ringPPM.setVisibility(View.INVISIBLE);
+                    textC.setVisibility(View.VISIBLE);
+                    textF.setVisibility(View.INVISIBLE);
                     setRadioIndex(index);
                 } else if (index == 2) {
                     linearLayoutA.setVisibility(View.VISIBLE);
@@ -245,6 +252,8 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
                     linearLayoutPPM.setVisibility(View.VISIBLE);
                     ringC.setVisibility(View.VISIBLE);
                     ringPPM.setVisibility(View.VISIBLE);
+                    textC.setVisibility(View.VISIBLE);
+                    textF.setVisibility(View.VISIBLE);
                     setRadioIndex(index);
                 }
             }
