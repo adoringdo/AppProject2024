@@ -11,16 +11,18 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="60dp"
         android:orientation="horizontal"
         android:gravity="center_vertical">
 
         <ImageView
+            android:id="@+id/historyBtn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/image_bulb"
+            android:src="@drawable/history"
             android:scaleType="fitXY"
             android:adjustViewBounds="true"
+            android:padding="@dimen/medium_margin"
             android:contentDescription="@string/app_name"/>
 
         <TextView
@@ -400,33 +402,10 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="@dimen/large_margin"
-            android:layout_marginHorizontal="@dimen/large_margin">
-
-            <Button
-                android:id="@+id/historyBtn"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/button_height"
-                android:layout_weight="1"
-                android:background="@drawable/bg_button_red"
-                android:fontFamily="@font/inter_semibold"
-                android:text="Istorija"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_XM"
-                android:visibility="visible"
-                android:layout_marginEnd="@dimen/half_margin"/>
-
             <Button
                 android:id="@+id/calculateBtn"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height"
-                android:layout_weight="1"
                 android:background="@drawable/bg_button_green"
                 android:fontFamily="@font/inter_semibold"
                 android:text="Skaičiuoti"
@@ -434,9 +413,9 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_XM"
                 android:visibility="visible"
-                android:layout_marginStart="@dimen/half_margin"/>
+                android:layout_marginBottom="@dimen/large_margin"
+                android:layout_marginHorizontal="@dimen/large_margin"/>
 
-        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -112,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
 //        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        Button historyButton = findViewById(R.id.historyBtn);
+        ImageView historyButton = findViewById(R.id.historyBtn);
 
        /* ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
