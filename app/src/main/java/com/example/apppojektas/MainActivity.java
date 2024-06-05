@@ -181,7 +181,7 @@ public class MainActivity extends AppCompatActivity implements CustomSpinner.OnS
 
                 PowerSet powerSet = new PowerSet(name, power, date, colors);
                 powerSetManager.savePowerSet(powerSet);
-                Toast.makeText(MainActivity.this, "Power set added successfully!", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "Power set added successfully!", Toast.LENGTH_SHORT).show();
 
 
             }

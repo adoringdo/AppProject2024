@@ -33,7 +33,8 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_M"
                     android:gravity="center"
-                    android:fontFamily="@font/inter_semibold"/>
+                    android:fontFamily="@font/inter_semibold"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/nameTextView"
@@ -44,7 +45,8 @@
                     android:textSize="@dimen/text_M"
                     android:gravity="center"
                     android:fontFamily="@font/inter"
-                    android:layout_marginStart="@dimen/normal_margin"/>
+                    android:layout_marginStart="@dimen/normal_margin"
+                    android:visibility="gone"/>
 
             </LinearLayout>
 
@@ -57,7 +59,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Power:"
+                    android:text="Varža:"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_M"
                     android:gravity="center"
@@ -85,7 +87,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Date:"
+                    android:text="Data:"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_M"
                     android:gravity="center"
@@ -116,7 +118,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Colors:"
+                    android:text="Spalvos:"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_M"
                     android:gravity="center"
@@ -135,7 +137,7 @@
                 android:id="@+id/deleteButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Delete"
+                android:text="Ištrinti"
                 android:textColor="@color/white"
                 android:fontFamily="@font/inter_semibold"
                 android:textAllCaps="false"
